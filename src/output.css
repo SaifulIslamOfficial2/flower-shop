@@ -24,6 +24,8 @@
     --container-7xl: 80rem;
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
@@ -33,7 +35,9 @@
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
     --font-weight-medium: 500;
+    --font-weight-semibold: 600;
     --font-weight-bold: 700;
+    --radius-lg: 0.5rem;
     --radius-2xl: 1rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -213,6 +217,9 @@
   .sticky {
     position: sticky;
   }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
   .top-\[-1px\] {
     top: -1px;
   }
@@ -255,6 +262,9 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
+  .right-\[-0px\] {
+    right: -0px;
+  }
   .right-\[-20px\] {
     right: -20px;
   }
@@ -264,8 +274,17 @@
   .right-\[-40px\] {
     right: -40px;
   }
+  .right-\[-60px\] {
+    right: -60px;
+  }
   .right-\[-70px\] {
     right: -70px;
+  }
+  .right-\[-80px\] {
+    right: -80px;
+  }
+  .right-\[-600px\] {
+    right: -600px;
   }
   .right-\[20px\] {
     right: 20px;
@@ -273,8 +292,23 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
+  .z-0 {
+    z-index: 0;
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .z-20 {
+    z-index: 20;
+  }
   .z-\[-1\] {
     z-index: -1;
+  }
+  .z-\[-2\] {
+    z-index: -2;
+  }
+  .z-\[2\] {
+    z-index: 2;
   }
   .order-1 {
     order: 1;
@@ -369,6 +403,18 @@
   .table {
     display: table;
   }
+  .h-40 {
+    height: calc(var(--spacing) * 40);
+  }
+  .h-48 {
+    height: calc(var(--spacing) * 48);
+  }
+  .h-64 {
+    height: calc(var(--spacing) * 64);
+  }
+  .h-96 {
+    height: calc(var(--spacing) * 96);
+  }
   .h-\[400px\] {
     height: 400px;
   }
@@ -378,11 +424,17 @@
   .h-\[533px\] {
     height: 533px;
   }
+  .h-full {
+    height: 100%;
+  }
   .max-h-\[400px\] {
     max-height: 400px;
   }
   .max-h-\[533px\] {
     max-height: 533px;
+  }
+  .min-h-\[320px\] {
+    min-height: 320px;
   }
   .min-h-\[400px\] {
     min-height: 400px;
@@ -546,6 +598,9 @@
   .gap-y-4 {
     row-gap: calc(var(--spacing) * 4);
   }
+  .overflow-hidden {
+    overflow: hidden;
+  }
   .rounded {
     border-radius: 0.25rem;
   }
@@ -567,6 +622,9 @@
   .rounded-\[50px\] {
     border-radius: 50px;
   }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -577,6 +635,9 @@
   }
   .bg-\[\(\)\] {
     background-color: ();
+  }
+  .bg-\[ur\] {
+    background-color: ur;
   }
   .bg-\[url\] {
     background-color: url;
@@ -590,6 +651,9 @@
   .bg-amber-700 {
     background-color: var(--color-amber-700);
   }
+  .bg-black {
+    background-color: var(--color-black);
+  }
   .bg-orange-600 {
     background-color: var(--color-orange-600);
   }
@@ -601,6 +665,9 @@
   }
   .bg-\[url\(\'\.\/asset\/image\/\/asset\/image\/deal-zabo\.png\'\)\] {
     background-image: url('./asset/image//asset/image/deal-zabo.png');
+  }
+  .bg-\[url\(\'\.\/asset\/image\/deal-bloom\.png\'\)\] {
+    background-image: url('./asset/image/deal-bloom.png');
   }
   .bg-\[url\(\'\/\'\)\] {
     background-image: url('/');
@@ -622,6 +689,9 @@
   }
   .bg-\[url\(\'\/asset\/image\/\/asset\/image\/deal-zabo\.png\'\)\] {
     background-image: url('/asset/image//asset/image/deal-zabo.png');
+  }
+  .bg-\[url\(\'\/asset\/image\/deal-bloom\.png\'\)\] {
+    background-image: url('/asset/image/deal-bloom.png');
   }
   .bg-\[url\(\'\/asset\/image\/news-letter-bg\.png\'\)\] {
     background-image: url('/asset/image/news-letter-bg.png');
@@ -679,6 +749,9 @@
   }
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
   }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
@@ -757,6 +830,10 @@
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
   }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
   .text-\[16px\] {
     font-size: 16px;
   }
@@ -773,6 +850,10 @@
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
   }
   .text-\[1\] {
     color: 1;
@@ -943,6 +1024,11 @@
   .md\:grid {
     @media (width >= 48rem) {
       display: grid;
+    }
+  }
+  .md\:h-60 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 60);
     }
   }
   .md\:w-auto {
